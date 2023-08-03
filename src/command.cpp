@@ -1,10 +1,10 @@
 void    command(Stock stock, int volume){
     int     total;
 
-    total = stock.getNbr() + volume;
+    total = stock.getNbStock() + volume;
 
-    if (total > stock.getMax())
+    if (total > stock.getMaxStock())
         cout << "La commande est trop importante" << endl;
     else
-        stock.setNbr(total);
+        stock.setNbStock(total);
 }

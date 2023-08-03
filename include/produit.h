@@ -1,63 +1,14 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <vector>
+#include "categorie.h"
 
 using namespace std;
 
-// class => print get set 
-//     constructeur dispo => dans la doc
-
-namespace Categorie {
-class Categorie  {
-
-    private:
-
-    public:
-        string type;
-        string unite;
-        int min;
-        int max;
-
-        //Categorie(){}
-        Categorie(const string& _type, const string& _unite, int _min, int _max): type(_type), unite(_unite), min(_min), max(_max){}
-
-        // Categorie(const Categorie& _c){
-        //         this->type = _c.type;
-        //         this->unite = _c.unite;
-        //         this->min = _c.min;
-        //         this->max = _c.max;
-        //     }
-
-        void set_type(const string& _type){type = type;}
-        void set_unite(const string& _unite){unite = _unite;}
-        void set_min(int _min){min = _min;}
-        void set_max(int _max){min = _max;}
-
-        string get_type(){return type;}
-        string get_unite(){return unite;}
-        
-        int get_min(){return min;}
-        int get_max(){return max;}
-
-        void afficherInfos() {
-            cout << "---CATEGORIE----" << endl;
-            cout << " Type: " << type << endl;
-            cout << " Unite en: " << unite  << endl;
-            cout << " Taille Min: " << min << endl;
-            cout << " Taille Max: " << max << endl;
-
-        }
-
-        //~Categorie(){}
-    };
-}
-
 namespace Produit{
-
     class Produit: public Categorie::Categorie {
-        private:
-
-        public:
+        protected:
             string nom;
             string rayon;
             float pht;
@@ -65,9 +16,18 @@ namespace Produit{
             bool promo;
             float prix_promo;
 
+        public:
             Produit(const Categorie c, const string& _nom, const string& _rayon, float _pht, float _pttc, bool _promo, float _prix_promo)
               :Categorie(c), nom(_nom), rayon(_rayon), pht(_pht), pttc(_pttc), promo(_promo), prix_promo(_prix_promo){}
 
+            Produit(const Produit &_p): Categorie(_p.type, _p.unite, _p.min, _p.max){
+                this->nom = _p.nom;
+                this->rayon = _p.rayon;
+                this->pht = _p.pht;
+                this->pttc = _p.pttc;
+                this->promo = _p.promo;
+                this->prix_promo = _p.prix_promo;
+            }
             
             void setnom(const string& _nom){nom = _nom;}
             void setrayon(const string& _rayon){rayon = _rayon;}
@@ -129,22 +89,3 @@ namespace Produit{
             }
 };
 }
-
-int main(){
-
-    Categorie::Categorie categorie("vetement", "cm", 38, 43);
-    categorie.afficherInfos();
-
-    Produit::Produit produit(categorie, "T-shirt de sport", "Fitness", 25.0, 30.0, false, 0.0);
-    produit.afficherInfos();
-
-    float prixTTC = produit.getPrixTTC();
-    cout << "Prix TTC après promotion : " << prixTTC << endl;
-    
-    string description = produit.descriptionProduit();
-    cout << "Description du produit : " << endl;
-    cout << description << endl;
-
-    return 0;
-
-};

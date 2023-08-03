@@ -1,4 +1,4 @@
-#include "fournisseur.h"
+#include "../include/fournisseur.h"
 
 Fournisseur::Fournisseur(const std::string& _nom,const std::string& _provenance)
 :nom(_nom),provenance(_provenance)
@@ -9,12 +9,12 @@ Fournisseur::Fournisseur(const std::string& _nom,const std::string& _provenance)
 Fournisseur::~Fournisseur()
 {
     for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
-        delete *produit
+        delete *produit;
     lstProduit.clear();
     std::cout <<"liste fournisseur détruite"<< std::endl;
 }
 
-void Fournisseur::addProduit(const Produit * produit)
+void Fournisseur::addProduit(Produit::Produit * produit)
 {
     lstProduit.push_back(produit);
 }
@@ -32,19 +32,19 @@ void Fournisseur::setProvenance(const std::string & _provenance)
 
 
 //PRINT
-void printNom()
+void Fournisseur::printNom()
 {
     std::cout <<"\t Le nom du fournisseur: "<< nom << std::endl;
 }
 
-void printProvenance()
+void Fournisseur::printProvenance()
 {
     std::cout <<"\t Le provenance du fournisseur: "<< provenance << std::endl;
 }
 
-void printListProduit()
+void Fournisseur::printListProduit()
 {
     for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
-        (*produit)->printProduit() //#doute
+        (*produit)->afficherInfos(); //#doute
 
 }

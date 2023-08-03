@@ -8,11 +8,11 @@ class Fournisseur {
     private:
         std::string nom;
         std::string provenance;
-        std::vector<* Produit> lstProduit;
+        std::vector<Produit::Produit *> lstProduit;
     public:
         Fournisseur(const std::string&,const std::string&);
         ~Fournisseur();
-        void addProduit(const Produit *);
+        void addProduit(Produit::Produit *);
         //Getters
         inline std::string getNom() const{ return nom; }
         inline std::string getProvenance() const{ return provenance; }
@@ -22,7 +22,7 @@ class Fournisseur {
         
         //PRINT
         void printNom();
-        void printProvenace();
+        void printProvenance();
         void printListProduit();
 
 };

@@ -17,65 +17,21 @@ class produit: categorie
     prixpromo
 
 class stock : produit 
-    minStock
-    alerte => seuil de stock
-    nbr en stock
-    maxStock
+    Stock(Produit _p, int _min, int _max, int _nb, int _alert):
+        Produit(_p), minStock(_min), maxStock(_max), nbStock(_nb), alertStock(_alert) {}
 ----------------------------------------------------
 
 class fournisseur => loik
-    private
-        string nom 
-        string provenance
-        vector *Proudit lstStock
-    public:
-        //constructeur
-        Fournisseur(string,string)
-        //destructeur
-        ~Fournisseur()
-        //methode
-        void addProduit(Produit *)
-            //Getters
-                string getNom()
-                string getProvenance()
-            //Setters
-                void setNom(string)
-                void setProvenance(string)
-            //Print
-                void printNom();
-                void printProvenace();
-                void printListProduit();
-
-
+    nom 
+    provenance
+    lstStock
 
 class magasin
-    private
-        string nom 
-        string ville
-        vector * Produit lstStock
-        vector *Fournisseur lstfournisseur
-        //lstpersonnel
-    public:
-        //constructeur
-        Magasin(string,string);
-        //destructeur
-        ~Magasin();
-        //methode
-        void addProduit(Produit *);
-        void addFournisseur(Fournisseur *);
-            //Getters
-                getNom()
-                getVille()
-            //SETTERS
-                string setNom(string);
-                string setVille(string);
-        
-            //PRINT
-                void printNom();
-                void printVille();
-                void printListProduit();
-                void printListFournisseur();
-
+    nom 
+    ville
+    lstStock
+    lstfournisseur
+    //lstpersonnel
 
 ---------------------------------------------------------
 

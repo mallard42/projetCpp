@@ -1,5 +1,5 @@
 void    alert(){
-    for(Stock elm : lstProduit)
-        if (elm.getNb() < elm.getMin())
-            command(elm, elm.getMax() - elm.getMin());
+    for(Stock elm : lstStock)
+        if (elm.getNbStock() < elm.getMinStock())
+            command(elm, elm.getMaxStock() - elm.getMinStock());
 }

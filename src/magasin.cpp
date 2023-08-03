@@ -1,4 +1,4 @@
-#include "Magasin.h"
+#include "../include/magasin.h"
 
 Magasin::Magasin(const std::string& _nom,const std::string& _ville)
 :nom(_nom),ville(_ville)
@@ -8,22 +8,22 @@ Magasin::Magasin(const std::string& _nom,const std::string& _ville)
 
 Magasin::~Magasin()
 {
-    for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
-        delete *produit
+    for(auto produit = lstStock.begin();produit < lstStock.end(); produit ++)
+        delete *produit;
     
     for(auto fournisseur = lstFournisseur.begin();fournisseur < lstFournisseur.end(); fournisseur ++)
-        delete *fournisseur
-    lstProduit.clear();
+        delete *fournisseur;
+    lstStock.clear();
     lstFournisseur.clear();
     std::cout <<"liste Magasin détruite"<< std::endl;
 }
 
-void Magasin::addProduit(const Produit * produit)
+void Magasin::addStock(Stock * stock)
 {
-    lstProduit.push_back(produit);
+    lstStock.push_back(stock);
 }
 
-void Magasin::addFournisseur(const Fournisseur * fournisseur)
+void Magasin::addFournisseur(Fournisseur * fournisseur)
 {
     lstFournisseur.push_back(fournisseur);
 }
@@ -41,28 +41,28 @@ void Magasin::setVille(const std::string & _ville)
 
 
 //PRINT
-void printNom()
+void Magasin::printNom()
 {
     std::cout <<"\t Le nom du Magasin: "<< nom << std::endl;
 }
 
-void printVille()
+void Magasin::printVille()
 {
     std::cout <<"\t Le ville du Magasin: "<< ville << std::endl;
 }
 
-void printListProduit()
+void Magasin::printListStock()
 {
-    for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
-        (*produit)->printProduit() //#doute
+    for(auto stock = lstStock.begin();stock < lstStock.end(); stock++)
+        (*stock)->print(); //#doute
 
 }
 
-void printListFournisseur()
+void Magasin::printListFournisseur()
 {
-    for(auto fournisseur = lstFournisseur.begin();fournisseur < lstFournisseur.end(); fournisseur ++){
+    for(auto fournisseur = lstFournisseur.begin();fournisseur < lstFournisseur.end(); fournisseur++){
         (*fournisseur)->printNom();
-        (*fournisseur)->printVille();
+        (*fournisseur)->printProvenance();
     }
 
 }

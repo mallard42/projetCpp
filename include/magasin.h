@@ -4,28 +4,31 @@
 #include <string>
 #include "produit.h"
 #include "fournisseur.h"
+#include "stock.h"
 
 class Magasin {
     private:
         std::string nom;
         std::string ville;
-        std::vector<* Produit> lstProduit;
-        std::vector<* Fournisseur> lstFournisseur;
+        std::vector<Stock *> lstStock;
+        std::vector<Fournisseur *> lstFournisseur;
     public:
         Magasin(const std::string&,const std::string&);
         ~Magasin();
-        void addProduit(const Produit *);
-        void addFournisseur(const Fournisseur *);
+        void addStock(Stock *);
+        void addFournisseur(Fournisseur *);
         //Getters
         inline std::string getNom() const{ return nom; }
         inline std::string getville() const{ return ville; }
         //SETTERS
         void setNom(const std::string &);
-        void setville(const std::string &);
+        void setVille(const std::string &);
         
         //PRINT
         void printNom();
+        void printVille();
         void printProvenace();
-        void printListeProduit();
+        void printListStock();
+        void printListFournisseur();
 
 };
