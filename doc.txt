@@ -1,6 +1,8 @@
 class => print get set 
+    constructeur dispo => dans la doc
 
-class categorie 
+----------------------------------
+class categorie => amine  
     type => vetement chaussure accessoire alimentaire 
     unite => pouces l g cm vetement?
     min => 38
@@ -19,8 +21,9 @@ class stock : produit
     alerte => seuil de stock
     nbr en stock
     maxStock
+----------------------------------------------------
 
-class fournisseur
+class fournisseur => loik
     nom 
     provenance
     lst produit
@@ -32,7 +35,9 @@ class magasin
     lstfournisseur
     //lstpersonnel
 
-    fonction commande 
+---------------------------------------------------------
+
+    fonction commande => mathilde
         si alerte atteinte commande produit
     
     comparaison de fournisseur sur un produit donné
@@ -41,6 +46,17 @@ class magasin
 Magasin disponibilite (lstMagasin, produitrechercher, ville)
     si dispo dans un magasin dans une ville donné
     si oui lequel/lesquels
+
+
+
+
+
+
+
+
+
+
+
 
 //nouveaux produit 
 //    => 1vetement 2chaussure 3accessoire 4alimentaire
