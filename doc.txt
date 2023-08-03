@@ -37,15 +37,25 @@ class magasin
 
 ---------------------------------------------------------
 
-    fonction commande => mathilde
-        si alerte atteinte commande produit
-    
-    comparaison de fournisseur sur un produit donné
-        alerte stock bas
+void    command(Stock stock, int volume)
+    commande une quantité donné sur un stock précis
 
-Magasin disponibilite (lstMagasin, produitrechercher, ville)
-    si dispo dans un magasin dans une ville donné
-    si oui lequel/lesquels
+    stock => stock que l'on veut remplir
+    volume => volume de la commande
+
+void    alert()
+    commande automatiquement si le stock est trop bas
+
+vector<Magasin*>    dispo(vector<Magasin*> lst, Produit produit, string ville)
+    renvoie la liste de magasin d'une ville donné qui a en stock le produit donné
+    lst => liste de magasin
+    produit => produit recherché
+    ville => ville du magasin recherché
+
+Fournisseur     compFornisseur(vector<Fournisseur*> lst, string produit)
+    renvoie le fournisseur le moins cher pour un produit donné
+    lst => liste de fournisseur
+    produit => produit recherché
 
 
 
