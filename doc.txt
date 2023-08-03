@@ -1,0 +1,60 @@
+class => print get set 
+
+class categorie 
+    type => vetement chaussure accessoire alimentaire 
+    unite => pouces l g cm vetement?
+    min => 38
+    max => 45
+
+class produit: categorie
+    nom
+    rayon => natation course yoga equitation ski ... 
+    pht
+    pttc
+    promo
+    prixpromo
+
+class stock : produit 
+    minStock
+    alerte => seuil de stock
+    nbr en stock
+    maxStock
+
+class fournisseur
+    nom 
+    provenance
+    lst produit
+
+class magasin
+    nom 
+    ville
+    lstproduit
+    lstfournisseur
+    //lstpersonnel
+
+    fonction commande 
+        si alerte atteinte commande produit
+    
+    comparaison de fournisseur sur un produit donné
+        alerte stock bas
+
+Magasin disponibilite (lstMagasin, produitrechercher, ville)
+    si dispo dans un magasin dans une ville donné
+    si oui lequel/lesquels
+
+
+
+
+
+
+//nouveaux produit 
+//    => 1vetement 2chaussure 3accessoire 4alimentaire
+//    nom => ...
+
+//class personnel 
+//    nom 
+//    poste
+//    horraire
+//    salaire
+
+//gestion de la vente => caisse, chiffre affaire
