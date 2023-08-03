@@ -42,11 +42,6 @@ Magasin disponibilite (lstMagasin, produitrechercher, ville)
     si dispo dans un magasin dans une ville donné
     si oui lequel/lesquels
 
-
-
-
-
-
 //nouveaux produit 
 //    => 1vetement 2chaussure 3accessoire 4alimentaire
 //    nom => ...

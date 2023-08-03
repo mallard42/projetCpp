@@ -4,11 +4,11 @@ DEFAULT = \x1b[0m
 
 NAME = MagasinSportif
 
-SRC = main.cpp
+SRC = main.cpp 
 
 SRCS = $(addprefix src/, $(SRC))
 
-FLAGS = -std=c++11
+FLAGS = -std=c++11 -Wall -Wextra -Werror
 
 all :  $(NAME)
 
