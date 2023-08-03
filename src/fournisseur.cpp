@@ -48,3 +48,11 @@ void Fournisseur::printListProduit()
         (*produit)->afficherInfos(); //#doute
 
 }
+
+//GETTER
+Produit::Produit *Fournisseur::getProduit(string produit){
+    for(auto &elm : lstProduit)
+        if (elm->getnom() == produit)
+            return elm;
+    return nullptr;
+}

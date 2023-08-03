@@ -100,24 +100,21 @@ Fournisseur     compFornisseur(vector<Fournisseur*> lst, string produit)
     produit => produit recherché
 
 
-
-
-
-
-
-
-
-
-
-
 //nouveaux produit 
-//    => 1vetement 2chaussure 3accessoire 4alimentaire
+//    => 1vetement 2chaussure 3accessoire  4alimentaire
 //    nom => ...
 
-//class personnel 
-//    nom 
-//    poste
-//    horraire
-//    salaire
+abs class personne
+    nom
+
+class personnel 
+    poste
+    horraire
+    salaire
+
+class client
+    point de fidelite
+
+ajout lst personnel dans magasin vector de smart pointer
 
 //gestion de la vente => caisse, chiffre affaire

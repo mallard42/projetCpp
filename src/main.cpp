@@ -50,5 +50,13 @@ int     main(){
     magasin.printListFournisseur();
     magasin.printListStock();
 
+    vector<Stock *> lstStock;
+    lstStock.push_back(stock1);
+    lstStock.push_back(stock2);
+
+    alert(lstStock);
+    
+    stock1->print();
+
     return 0;
 }

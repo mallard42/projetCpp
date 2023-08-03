@@ -24,6 +24,8 @@ class Magasin {
         void setNom(const std::string &);
         void setVille(const std::string &);
         
+        int  isStock(std::string);
+
         //PRINT
         void printNom();
         void printVille();

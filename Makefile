@@ -4,7 +4,7 @@ DEFAULT = \x1b[0m
 
 NAME = MagasinSportif
 
-SRC = main.cpp fournisseur.cpp magasin.cpp 
+SRC = main.cpp fournisseur.cpp magasin.cpp command.cpp dispo.cpp compFournisseur.cpp alert.cpp
 
 SRCS = $(addprefix src/, $(SRC))
 

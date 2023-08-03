@@ -66,3 +66,11 @@ void Magasin::printListFournisseur()
     }
 
 }
+
+//IS
+int     Magasin::isStock(string produit){
+    for(auto &elm : lstStock)
+        if (elm->getnom() == produit)
+            return 1;
+    return 0;
+}

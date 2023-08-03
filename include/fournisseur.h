@@ -16,6 +16,7 @@ class Fournisseur {
         //Getters
         inline std::string getNom() const{ return nom; }
         inline std::string getProvenance() const{ return provenance; }
+        Produit::Produit *getProduit(std::string);
         //SETTERS
         void setNom(const std::string &);
         void setProvenance(const std::string &);

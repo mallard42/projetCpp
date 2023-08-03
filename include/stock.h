@@ -17,10 +17,10 @@ class Stock: public Produit::Produit{
         void    setNbStock(int _nb){nbStock = _nb;}
         void    setAlertStock(int _alert){alertStock = _alert;}
 
-        int     getMinStock(int _min){return _min;}
-        int     getMaxStock(int _max){return _max;}
-        int     getNbStock(int _nb){return _nb;}
-        int     getAlertStock(int _alert){return _alert;}
+        int     getMinStock(){return minStock;}
+        int     getMaxStock(){return maxStock;}
+        int     getNbStock(){return nbStock;}
+        int     getAlertStock(){return alertStock;}
 
         void    alert(){
             if (nbStock < minStock)
@@ -39,3 +39,6 @@ class Stock: public Produit::Produit{
 
         ~Stock() = default;
 };
+
+void    command(Stock *stock, int volume);
+void    alert(vector<Stock *> lstStock);

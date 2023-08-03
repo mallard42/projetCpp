@@ -1,15 +1,11 @@
-int     isProduit(string produit){
-    for(Produit elm : lstStock)
-        if (elm.getNom() == produit)
-            return 1;
-    return 0;
-}
+#include "../include/magasin.h"
+#include "../include/produit.h"
 
-vector<Magasin*>    dispo(vector<Magasin*> lst, Produit produit, string ville){
+vector<Magasin*>    dispo(vector<Magasin*> lst, Produit::Produit produit, string ville){
     vector<Magasin*>    res;
 
-    for(Magasin elm: lst){
-        if (elm.isProduit() && elm.getville() == ville)
+    for(auto &elm: lst){
+        if (elm->isStock(produit.getnom()) && elm->getville() == ville)
             res.push_back(elm);
     }
     return res;
