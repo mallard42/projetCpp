@@ -26,7 +26,7 @@ class stock : produit
 class fournisseur => loik
     nom 
     provenance
-    lst produit
+    lstproduit
 
 class magasin
     nom 
