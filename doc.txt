@@ -24,16 +24,58 @@ class stock : produit
 ----------------------------------------------------
 
 class fournisseur => loik
-    nom 
-    provenance
-    lstproduit
+    private
+        string nom 
+        string provenance
+        vector *Proudit lstproduit
+    public:
+        //constructeur
+        Fournisseur(string,string)
+        //destructeur
+        ~Fournisseur()
+        //methode
+        void addProduit(Produit *)
+            //Getters
+                string getNom()
+                string getProvenance()
+            //Setters
+                void setNom(string)
+                void setProvenance(string)
+            //Print
+                void printNom();
+                void printProvenace();
+                void printListProduit();
+
+
 
 class magasin
-    nom 
-    ville
-    lstproduit
-    lstfournisseur
-    //lstpersonnel
+    private
+        string nom 
+        string ville
+        vector * Produit lstproduit
+        vector *Fournisseur lstfournisseur
+        //lstpersonnel
+    public:
+        //constructeur
+        Magasin(string,string);
+        //destructeur
+        ~Magasin();
+        //methode
+        void addProduit(Produit *);
+        void addFournisseur(Fournisseur *);
+            //Getters
+                getNom()
+                getVille()
+            //SETTERS
+                string setNom(string);
+                string setVille(string);
+        
+            //PRINT
+                void printNom();
+                void printVille();
+                void printListProduit();
+                void printListFournisseur();
+
 
 ---------------------------------------------------------
 
