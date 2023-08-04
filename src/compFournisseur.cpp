@@ -6,6 +6,12 @@ T   minimum(T a, T b){
 }
 
 std::shared_ptr<Fournisseur> compFornisseur(vector<std::shared_ptr<Fournisseur>> lst, string produit){
+    /**
+    * @param Parcours une liste de fournisseur et renvoie le fournisseur le moins cher
+    * @var lst liste des fournisseur
+    * @var produit le produit rechercher
+    */
+
     int                                 min;
     std::shared_ptr<Fournisseur>        res;
     std::shared_ptr<Produit::Produit>   tmp;
