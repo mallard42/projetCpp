@@ -8,6 +8,7 @@ using namespace std;
 #include "../include/produit.h"
 #include "../include/magasin.h"
 #include "../include/fournisseur.h"
+#include "Personnel.cpp"
 
 
 int     main(){
@@ -58,5 +59,11 @@ int     main(){
     
     stock1->print();
 
+    Personnel person("nom","poste","horraie",1);
+    Client client("client",10);
+    person.afficherInfos();
+    client.afficherInfos();
+    vector<unique_ptr<Personne>> lstPeople;
+    lstPeople.push_back(make_unique<Personne> ("nom"));
     return 0;
 }
