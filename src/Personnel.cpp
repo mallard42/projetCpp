@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
+#include <functional>
 //#include <gtk/gtk.h>
 
 using namespace std;
@@ -12,7 +14,7 @@ protected:
 public:
     
     Personne(const string& _nom) : nom(_nom) {}
-
+    virtual ~Personne() = default;
     virtual void afficherInfos() const = 0;
     string getNom() const { return nom; }
 };
@@ -25,8 +27,8 @@ private:
 
 public:
     Personnel(const string& _nom, const string& _poste, const string& _horaire, float _salaire)
-        : Personne(_nom), poste(_poste), horaire(_horaire), salaire(_salaire) {}
-
+        :Personne(_nom), poste(_poste), horaire(_horaire), salaire(_salaire) {}
+    ~Personnel() = default;
     void afficherInfos() const override {
         cout << "--- PERSONNEL ---" << endl;
         cout << "Nom: " << nom << endl;
@@ -50,15 +52,50 @@ public:
         return salaire_net;
     }
 
-}; 
+};
 
-int main(){
+class Client : public Personne{
+    private:
+        int pt_fidelity;
+    public:
+        Client(const std::string &_nom,const int _pt_fidelity)
+            :Personne(_nom),pt_fidelity(_pt_fidelity){}
+        ~Client() = default;
+        //Getters
+        inline int getPtFidelity() const { return pt_fidelity; }
+        //Setters
+        void setPtFidelity(const int & _pt_fidelity) { pt_fidelity = _pt_fidelity; }
+        //Methode
+        void afficherInfos() const override {
+            cout <<"\tnom du client :"<<nom<< endl
+            <<"\tle nombre de point de fidelité :"<<pt_fidelity<< endl;
+        }
+};
 
-    Personnel personnel("Jean Dupont", "Vendeur", "Temps plein", 2500.0);
-    personnel.afficherInfos();
-    personnel.calculerSalaireNet(250.34);
+class People {
+    private:
+        vector<shared_ptr<Personne>> lstPeople;
+    public:
+        ~People() = default;
+        void addPeople(shared_ptr<Personne> personne){
+            lstPeople.push_back(personne);
+        }
+
+        void whois()
+        {
+            for(auto people = lstPeople.begin();people < lstPeople.end(); people ++){
+                shared_ptr<Personnel> personne = dynamic_pointer_cast<Personnel> (*people);
+                shared_ptr<Client> client = dynamic_pointer_cast<Client>(*people);
+
+                if(personne) {
+                    std::cout << "\til fait partie du personnel " << personne->getNom() << std::endl;
+                }else if(client){
+                    std::cout << "\til fait partie de la clientèle " << client->getNom() << std::endl;
+                }else{
+                    std::cout << "unknow" << std::endl;
+                }
+            }
+        }
     
-
-    return 0;
 
 };
