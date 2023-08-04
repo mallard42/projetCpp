@@ -5,10 +5,10 @@ T   minimum(T a, T b){
     return (a < b) ? a : b;
 }
 
-Fournisseur     *compFornisseur(vector<Fournisseur*> lst, string produit){
-    int                 min;
-    Fournisseur         *res;
-    Produit::Produit    *tmp;
+std::shared_ptr<Fournisseur> compFornisseur(vector<std::shared_ptr<Fournisseur>> lst, string produit){
+    int                                 min;
+    std::shared_ptr<Fournisseur>        res;
+    std::shared_ptr<Produit::Produit>   tmp;
 
     for (auto &elm : lst){
         tmp = elm->getProduit(produit);

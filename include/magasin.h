@@ -10,13 +10,16 @@ class Magasin {
     private:
         std::string nom;
         std::string ville;
-        std::vector<Stock *> lstStock;
-        std::vector<Fournisseur *> lstFournisseur;
+        std::vector<std::shared_ptr<Stock>> lstStock;
+        std::vector<std::shared_ptr<Fournisseur>> lstFournisseur;
+        // std::vector<std::shared_ptr<Personnel>> lstPersonnel;
+
     public:
         Magasin(const std::string&,const std::string&);
         ~Magasin();
-        void addStock(Stock *);
-        void addFournisseur(Fournisseur *);
+        void addStock(std::shared_ptr<Stock>);
+        void addFournisseur(std::shared_ptr<Fournisseur>);
+        // void addPersonnel(std::shared_ptr<Personnel>);
         //Getters
         inline std::string getNom() const{ return nom; }
         inline std::string getville() const{ return ville; }
@@ -34,3 +37,5 @@ class Magasin {
         void printListFournisseur();
 
 };
+
+vector<std::shared_ptr<Magasin>>    dispo(vector<std::shared_ptr<Magasin>> lst, Produit::Produit produit, string ville);

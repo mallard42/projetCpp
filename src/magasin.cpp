@@ -8,25 +8,29 @@ Magasin::Magasin(const std::string& _nom,const std::string& _ville)
 
 Magasin::~Magasin()
 {
-    for(auto produit = lstStock.begin();produit < lstStock.end(); produit ++)
-        delete *produit;
+    // for(auto produit = lstStock.begin();produit < lstStock.end(); produit ++)
+    //     delete *produit;
     
-    for(auto fournisseur = lstFournisseur.begin();fournisseur < lstFournisseur.end(); fournisseur ++)
-        delete *fournisseur;
+    // for(auto fournisseur = lstFournisseur.begin();fournisseur < lstFournisseur.end(); fournisseur ++)
+    //     delete *fournisseur;
     lstStock.clear();
     lstFournisseur.clear();
     std::cout <<"liste Magasin détruite"<< std::endl;
 }
 
-void Magasin::addStock(Stock * stock)
+void Magasin::addStock(std::shared_ptr<Stock> stock)
 {
     lstStock.push_back(stock);
 }
 
-void Magasin::addFournisseur(Fournisseur * fournisseur)
+void Magasin::addFournisseur(std::shared_ptr<Fournisseur> fournisseur)
 {
     lstFournisseur.push_back(fournisseur);
 }
+
+// void Magasin::addPersonnel(std::shared_ptr<Personnel> personnel){
+//     lstPersonnel.push_back(personnel);
+// }
 
 //SETTERS
 void Magasin::setNom(const std::string & _nom)

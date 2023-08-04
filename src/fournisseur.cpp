@@ -8,13 +8,13 @@ Fournisseur::Fournisseur(const std::string& _nom,const std::string& _provenance)
 
 Fournisseur::~Fournisseur()
 {
-    for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
-        delete *produit;
+    // for(auto produit = lstProduit.begin();produit < lstProduit.end(); produit ++)
+    //     delete *produit;
     lstProduit.clear();
     std::cout <<"liste fournisseur détruite"<< std::endl;
 }
 
-void Fournisseur::addProduit(Produit::Produit * produit)
+void Fournisseur::addProduit(std::shared_ptr<Produit::Produit> produit)
 {
     lstProduit.push_back(produit);
 }
@@ -50,7 +50,7 @@ void Fournisseur::printListProduit()
 }
 
 //GETTER
-Produit::Produit *Fournisseur::getProduit(string produit){
+std::shared_ptr<Produit::Produit> Fournisseur::getProduit(string produit){
     for(auto &elm : lstProduit)
         if (elm->getnom() == produit)
             return elm;

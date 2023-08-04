@@ -40,5 +40,5 @@ class Stock: public Produit::Produit{
         ~Stock() = default;
 };
 
-void    command(Stock *stock, int volume);
-void    alert(vector<Stock *> lstStock);
+void    command(std::shared_ptr<Stock> stock, int volume);
+void    alert(vector<std::shared_ptr<Stock>> lstStock);

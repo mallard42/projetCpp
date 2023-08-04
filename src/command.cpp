@@ -1,6 +1,6 @@
 #include "../include/stock.h"
 
-void    command(Stock *stock, int volume){
+void    command(std::shared_ptr<Stock> stock, int volume){
     int     total;
 
     total = stock->getNbStock() + volume;
