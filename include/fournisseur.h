@@ -3,6 +3,11 @@
 #include <vector>
 #include <string>
 #include "produit.h"
+#include <memory>
+
+/**
+ * @file fournisseur.h
+ */
 
 class Fournisseur {
     private:

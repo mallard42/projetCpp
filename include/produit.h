@@ -3,6 +3,11 @@
 #include <string>
 #include <vector>
 #include "categorie.h"
+#include <memory>
+
+/**
+ * @file produit.h
+ */
 
 using namespace std;
 

@@ -6,6 +6,11 @@
 #include "fournisseur.h"
 #include "stock.h"
 #include "../src/Personnel.cpp"
+#include <memory>
+
+/**
+ * @file magasin:h
+ */
 
 class Magasin {
     private:

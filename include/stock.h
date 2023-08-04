@@ -1,4 +1,8 @@
 #include "produit.h"
+#include <memory>
+/**
+ * @file stock.h
+ */
 
 class Stock: public Produit::Produit{
     private:
