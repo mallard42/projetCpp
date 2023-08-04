@@ -32,8 +32,7 @@ class Stock: public Produit::Produit{
         }
 
         void    print(){
-            cout << "--------" << endl;
-            // this->Produit::Produit::print();
+            this->Produit::afficherInfos();
             cout << "\nMin: " << minStock << endl;
             cout << "Max: " << maxStock << endl;
             cout << "Nombre en stock: " << nbStock << endl;
