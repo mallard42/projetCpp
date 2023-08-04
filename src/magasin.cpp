@@ -28,9 +28,9 @@ void Magasin::addFournisseur(std::shared_ptr<Fournisseur> fournisseur)
     lstFournisseur.push_back(fournisseur);
 }
 
-// void Magasin::addPersonnel(std::shared_ptr<Personnel> personnel){
-//     lstPersonnel.push_back(personnel);
-// }
+void Magasin::addPersonnel(std::shared_ptr<Personnel> personnel){
+    lstPersonnel.push_back(personnel);
+}
 
 //SETTERS
 void Magasin::setNom(const std::string & _nom)

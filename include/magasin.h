@@ -5,6 +5,7 @@
 #include "produit.h"
 #include "fournisseur.h"
 #include "stock.h"
+#include "../src/Personnel.cpp"
 
 class Magasin {
     private:
@@ -12,14 +13,14 @@ class Magasin {
         std::string ville;
         std::vector<std::shared_ptr<Stock>> lstStock;
         std::vector<std::shared_ptr<Fournisseur>> lstFournisseur;
-        // std::vector<std::shared_ptr<Personnel>> lstPersonnel;
+        std::vector<std::shared_ptr<Personnel>> lstPersonnel;
 
     public:
         Magasin(const std::string&,const std::string&);
         ~Magasin();
         void addStock(std::shared_ptr<Stock>);
         void addFournisseur(std::shared_ptr<Fournisseur>);
-        // void addPersonnel(std::shared_ptr<Personnel>);
+        void addPersonnel(std::shared_ptr<Personnel>);
         //Getters
         inline std::string getNom() const{ return nom; }
         inline std::string getville() const{ return ville; }
